@@ -2,6 +2,7 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <a routerLink= '/' class="navbar-brand">Recipe Book</a>
+            <span>{{data}}</span>
         </div>
         <div>
             <div class="navbar-default ">
@@ -10,6 +11,15 @@
                     <li><a href="#" (click)="onSelect('shopping-list')">Shopping list</a></li> -->
                     <li routerLinkActive= 'active'><a routerLink="/recipes" >Recipes</a></li>
                     <li routerLinkActive= 'active'><a routerLink="/shopping-list" >Shopping list</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown" appDropdown>
+                        <a  class="dropdown-toggle" role="button">Account <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a style="cursor:pointer;" (click)="onLogIn()">Log In</a></li>
+                            <li><a style="cursor:pointer;" (click)="onLogOut()" >Log Out</a></li>
+                        </ul>
+                    </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown" appDropdown>

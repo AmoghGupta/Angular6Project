@@ -1,5 +1,5 @@
-<app-header (featureSelected)="onNavigate($event)" ></app-header>
-<div class="container">
+<app-header (featureSelected)="onNavigate($event)"  [data]="numberTest"  ></app-header>
+<div class="container" (click)="changeNumber()">
   <div class="row">
     <div class="col-md-12">
       <!-- <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes>

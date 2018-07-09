@@ -2,16 +2,26 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { DataStorageService } from 'app/shared/data-storage.service';
 import { Http } from "@angular/http";
 import { Response } from "@angular/http";
+import { ChangeDetectionStrategy, Input } from '@angular/core';
+import { AuthService } from '../auth.service';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+  
 })
 export class HeaderComponent implements OnInit {
   // @Output() featureSelected = new EventEmitter<string>();
-  constructor(private dataStorageService:DataStorageService) { }
+
+   // simple example of change detection strategy in angular 
+   // whenever the data input changes component is reloaded
+  @Input() data: number;
+  constructor(private dataStorageService:DataStorageService, private authService: AuthService) { }
 
   ngOnInit() {
+    
   }
 
   // onSelect(feature: string){
@@ -28,5 +38,12 @@ export class HeaderComponent implements OnInit {
 
   onFetchData(){
     this.dataStorageService.getRecipes();
+  }
+  onLogIn(){
+    this.authService.logIn();
+  }
+
+  onLogOut(){
+    this.authService.logOut();
   }
 }

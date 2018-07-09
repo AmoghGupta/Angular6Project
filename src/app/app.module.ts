@@ -18,6 +18,8 @@ import { RecipeServices } from 'app/recipes/recipe.services';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { DataStorageService } from 'app/shared/data-storage.service';
+import { AuthGuard } from 'app/auth-guard.service';
+import { AuthService } from './auth.service';
 
 
 @NgModule({
@@ -37,7 +39,7 @@ import { DataStorageService } from 'app/shared/data-storage.service';
   imports: [
     BrowserModule,AppRoutingModule, FormsModule, ReactiveFormsModule, HttpModule
   ],
-  providers: [ShoppingListService, RecipeServices, DataStorageService],
+  providers: [ShoppingListService, RecipeServices, DataStorageService, AuthGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
