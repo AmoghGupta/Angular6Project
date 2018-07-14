@@ -1,0 +1,23 @@
+<div class="row">
+  <h1>Sign in to the application</h1>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+      <form (ngSubmit)="onSignIn(f)" #f="ngForm">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" ngModel class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" ngModel class="form-control">
+        </div>
+        <button class="btn btn-primary" type="submit">Sign in</button>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+      <div class="alert alert-danger" *ngIf="isError == true">{{errorMessage}}</div>
+    </div>
+  
+  
