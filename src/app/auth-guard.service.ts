@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { Injectable, EventEmitter } from '@angular/core';
 import { AuthService } from './auth.service';
 import { AuthFireBaseService } from './auth/auth-firebase.service';
-import { Subject } from '../../node_modules/rxjs/Subject';
+import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class AuthGuard{

@@ -6,7 +6,7 @@ import { ChangeDetectionStrategy, Input } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { AuthGuard } from '../auth-guard.service';
 import { AuthFireBaseService } from '../auth/auth-firebase.service';
-import { Router } from '../../../node_modules/@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',

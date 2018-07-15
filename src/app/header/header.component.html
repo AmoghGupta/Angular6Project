@@ -21,6 +21,7 @@
                             </ul>
                         </li>
                         <li *ngIf="!authFirebase.isAuthenticated()"><a routerLink="/signup" >Register</a></li>
+                        <li *ngIf="!authFirebase.isAuthenticated()"><a routerLink="/signin" >Sign In</a></li>
                         <li *ngIf="authFirebase.isAuthenticated()"><a (click)="logOut()" href="#">Log Out</a></li>
                         <!-- <li class="dropdown" appDropdown>
                             <a  class="dropdown-toggle" role="button">Account <span class="caret"></span></a>
